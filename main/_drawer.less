@@ -1,0 +1,342 @@
+// -----------------------------------
+// DRAWER
+// -----------------------------------
+// author: JP - 2013
+// -----------------------------------
+
+// -----------------------  MORE DRAWER SETTINGS
+.clickme {
+	cursor: pointer;
+}
+
+.drawer {
+	// height: 127px;
+	position: fixed;
+	width: 100%;
+	visibility: hidden;
+	z-index: 5; 
+
+	header {
+		margin: auto auto auto 75%;
+		width: 150px;
+		z-index: 5;
+
+		.link{
+			background-color: @navbarBackground;
+			color: @navbarText;
+			display: block;
+			// height: 12px;
+			overflow: hidden;
+			padding: 3px;
+			text-align: center;
+		}
+	}
+
+	.drawer-content {
+		background-color: @navbarBackground;
+		border-collapse: collapse;
+		color: @navbarText;
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+.drawer.top {
+	top: 0px;
+
+	header {
+		border-top: 0px solid @black;
+		margin-top: -42px;
+
+		.link {
+			// .border-bottom-radius( @baseBorderRadius );
+			// .box-shadow( @cc-under-shadow );
+		}
+	}
+
+	.drawer-content {
+		.box-shadow( @cc-under-shadow );
+		max-height: 250px;
+	}
+}
+
+.drawer.bottom {
+	bottom: 0px;
+
+	header {
+		border-bottom: 0px solid @navbarBackground;
+
+		.link {
+			.border-top-radius( @baseBorderRadius );
+			.box-shadow( @cc-over-shadow );
+			position: relative;
+		}
+	}
+
+	.drawer-content {
+		.box-shadow( @cc-over-shadow );
+		max-height: 700px;
+	}
+}
+
+
+// ------------------  SECTION DRAWER SETTINGS
+
+.section-container {
+	margin-bottom:			15px;
+	
+	h4.alt {
+		color:				@grey85;
+		font-size:			@fontSizeLarge;
+		font-weight:		bold;
+		margin:				0px;
+		padding:			6px 0px 8px 10px;
+		text-transform:		none;
+	}
+
+	.sectionTitle {
+		background-color:		@grey25;
+		height:					33px;
+		margin-bottom:			12px;
+		.border-radius ( @baseBorderRadius );
+		
+		&.title-panel-extended {
+			.border-bottom-left-radius ( 0px );
+			.border-bottom-right-radius ( 0px );
+			.border-top-left-radius ( @baseBorderRadius );
+			.border-top-right-radius ( @baseBorderRadius );
+			.box-shadow ( 0px 4px 3px -2px @grey65 );
+			margin-bottom: 0px;
+			position: relative;
+		}
+
+		.mid-nav-group {
+			float:				left;
+			margin-left:		452px;
+			text-align:			right;
+			width:				375px;
+
+			.group-by {
+				padding-top:	4px;
+
+				.dropdown {
+					display: inline;
+
+					a.btn {
+						height: 20px;
+						padding-top: 3px;
+
+					}
+				}
+			}
+
+			.section_btn_group {
+				margin:				4px 0px 0px 0px;
+
+				.btn {
+					font-size:		12px;
+					line-height:	16px;
+				}
+			}
+		}
+
+		.divider {
+			height:				25px;
+			float:				left;
+			margin-left:		6px;
+			margin-top:			5px;
+		}
+
+		.right-nav-group{
+			float:				right;
+			height:				25px;
+			padding:			5px 10px 0 0;
+			width:				13px;
+
+			.icon-question-sign {
+				margin-top:		4px;
+			}
+		}
+	}
+
+	.panel-content {
+
+		.panel-controls {
+			background-color:	@grey5;
+			border-bottom:		1px solid @grey25;
+			border-left:		1px solid @grey25;
+			border-right:		1px solid @grey25;
+			height: 116px;
+			padding-top: 12px;
+
+			div[class^="internal-box"] {
+				float: left;
+				height: 100px;
+				margin-left: 25px;
+
+				.content-title {
+					color: #8c8c8c;
+					font-size: 14px;
+					font-weight: bold;
+					line-height: 28px;
+					margin-bottom: 6px;
+				}
+			}
+
+			.internal-box-small {
+				width: 110px;
+			}
+
+			.internal-box-medium {
+				width: 120px;
+			}
+
+			a.cc-dropdown-mini {
+				width: 110px;
+			}
+
+			.step-num {
+				font-size: 20px;
+				font-weight: normal;
+
+				.icon {
+					margin-top: 6px;
+				}
+			}
+
+			.content {
+
+				.sort-selecter {
+					margin-bottom: 6px;
+				}
+
+				.checkbox,
+				.radio {
+					margin-bottom: 6px;
+				}
+
+				.checkbox input[type="checkbox"],
+				.radio input[type="radio"] {
+					margin-top: 2px;
+				}
+			}
+
+			.divider-tall {
+				height: 100px;
+				margin-left: 30px;
+				margin-right: 12px;
+				margin-top: 6px
+			}
+
+			.divider-short {
+				height: 30px;
+				margin-left: 12px;
+				margin-right: 12px;
+			}
+
+			.add-sort {
+				margin-top: 6px;
+			}
+		}
+
+		.panel-buttons {
+			background-color: #ffffff;
+			border-bottom: 1px solid #bfbfbf;
+			border-left: 1px solid #bfbfbf;
+			border-right: 1px solid #bfbfbf;
+			padding: 6px;
+			text-align: right;
+
+			.hint-text {
+				color: #8C8C8C;
+				float: left;
+				margin-top: 4px;
+			}
+
+			.text-link {
+				margin-right: 6px;
+			}
+		}
+	}
+}
+
+/* legacy ie will push content into overflow causing scrollbars within section containers */
+.ie8 .sectionTitle,
+.ie7 .sectionTitle {
+	width:					935px;
+}
+
+.ie7 .tab-content,
+.ie8 .tab-content {
+	width: 945px;
+	padding-right: 5px;
+}
+.ie7 .rule-section .title-panel-extended,
+.ie8 .rule-section .title-panel-extended {
+	width: 945px;
+}
+
+.ie8 .panel-controls,
+.ie7 .panel-controls {
+	height: 130px;
+}
+
+
+// ------------------  GRID DRAWER SETTINGS
+
+
+.data-grid {
+
+	tr th {
+		border-bottom:		1px solid @grey85;
+		color:				@grey45;
+	}
+
+	.subject {
+		border-bottom:		2px solid @grey85;
+
+		td {
+			background-color:	@grey15;
+			font-weight:		bold;
+
+
+		}
+	}
+
+	.expanded_row {
+
+		.info_row {
+			background-color:	@grey5;
+			width:				940px;
+
+			.expandContentSection {
+				width:			270px;
+				float:			left;
+
+				.characteristicsData {
+					font-weight:	bold;
+				}
+
+			}
+
+			.linksRow {
+				width: 101%;
+				float: left;
+				border-top: 1px solid #ddd;
+				margin-top: 5px;
+				margin-left: -5px;
+
+				.linksContainer {
+					margin-top: 5px;
+					margin-left: 5px;
+				}
+			}
+		}
+
+	}
+}
+
+
+
+
+

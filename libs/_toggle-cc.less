@@ -1,0 +1,38 @@
+// -----------------------------------
+// TOGGLE
+// -----------------------------------
+// author: JP - 2013
+// -----------------------------------
+
+// -----------------------  TOGGLE SETTINGS
+
+// .toggle-button {
+	
+// 	.btn {
+// 		.border-bottom-right-radius ( @baseBorderRadius );
+// 		.border-top-right-radius ( @baseBorderRadius );
+
+// 		padding: 4px 5px;
+// 	}
+
+// }
+
+.btn.toggle {
+	padding: 0px;
+
+	.icon {
+		border-right: 1px solid @dividerBlack;
+		display: inline-block;
+		padding: 3px 0px 3px 6px;
+	}
+
+	.text {
+		border-left: 1px solid @dividerWhite;
+		display: inline-block;
+		padding: 3px 12px 3px 9px;
+	}
+
+	&.down {
+		  .buttonBackground(@btnToggleDownHighlight, @btnToggleDown, @white, 0 1px 1px rgba(255,255,255,.75));
+	}
+}

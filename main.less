@@ -1,0 +1,486 @@
+// -----------------------------------
+// MAIN
+// -----------------------------------
+// author: JP - 2013
+// -----------------------------------
+
+
+// Can we use a mixin to store background images as a variable? 
+// Example would be the company logo or something like that?
+
+
+// @import 'libs/_reset.less';
+@import 'bootstrap-2.3.1/variables.less';
+@import 'bootstrap-2.3.1/mixins.less';
+// @import 'libs/_cc-theme.less';
+
+
+// ----------------------- MAIN STYLES
+html,
+body {
+	height:			100%;
+}
+
+body {
+	font-family: 	@sansFontFamily;
+
+	.primary-content {
+		margin-top: 100px;
+	}
+}
+
+h1 {
+	border-bottom: 1px solid @grey85;
+	color: @grey85;
+	font-size: 21px;
+	font-weight: normal;
+	line-height:	@baseLineHeight;
+	padding: 0 10px;
+}
+
+h1.alt {
+	border-bottom: none;
+}
+
+
+h2 {
+    border-bottom:	2px solid @grey85;
+    color:			@grey85;
+    font-size:		16px;
+	line-height:	@baseLineHeight;
+    padding:		0px 10px;
+}
+
+
+h2.alt {
+    border-bottom:	none;
+    padding:		0.35em 10px;
+}
+
+
+h2.special {
+    background-color: 		@grey25;
+}
+
+h3 {
+    border-bottom:	2px solid @grey45;
+    color:			@grey45;
+    font-size:		16px;
+	line-height:	@baseLineHeight;
+    padding:		0px 10px;
+}
+
+
+h3.alt {
+    border-bottom:	none;
+}
+
+h3.popover-subtitle {
+   border-bottom:	none;
+   font-size:		13px;
+   margin:			0px;
+   padding:			0px;
+}
+
+h4 {
+    border-bottom:	1px solid @grey45;
+    color:			@grey45;
+    font-weight:	normal;
+	line-height:	@baseLineHeight;
+    padding:		0px 10px;
+    text-transform:	uppercase;
+}
+
+h4.alt {
+    border-bottom: none;
+}
+
+
+p {
+	font-size:  	@baseFontSize;
+}
+
+a {
+	&.disabled {
+		opacity: 0.4;
+	}
+
+	&.primary {
+		.strong;
+	}
+
+	&.iconLink {
+		color: @black;
+
+		&:hover,
+		&.hover,
+		&:focus {
+			color: @grey65;
+			text-decoration: none;
+
+			i {
+				background-image: url("@{iconDisableSpritePath}");
+			}
+		}
+
+		.link-text {
+			display:	inline;
+			width:		100%;
+		}
+		
+		&.iconToggle {
+			padding: 2px 0px 3px 4px;
+			.border-radius ( @borderRadiusSmall ); 
+		
+			&:hover,
+			&.hover,
+			&:focus {
+				.box-shadow ( @toggle-hover-box-shadow-color );
+			}
+
+			&.active {
+				.box-shadow ( @toggle-active-box-shadow-color );
+			}
+		}
+
+	}
+}
+
+
+
+
+.no-left { 
+	margin-left: 	0px;
+}
+
+.page-breaker {
+	border-bottom:	4px solid @grey45;
+	margin: 20px 50px;
+}
+
+.section-breaker {
+	border-bottom: 2px solid @grey45;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+//Need to continue work on this, but it needs to be here
+.highlight {
+	border: 1px solid @gold;
+	background-color: @goldLight;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.number-column {
+	text-align:		right;
+}
+
+.divider {
+	border-left: 1px solid #000000;
+	border-right: 1px solid #ffffff;
+	opacity: .3;
+	width: 0px;
+}
+
+.dropdown a.cc-dropdown-mini {
+	color:				@grey85;
+	font-size:			@baseFontSize;
+	font-weight:		normal;
+	height:				auto;
+	margin-bottom:		2px;
+	padding:			1px 2px 1px 6px;
+	text-align:			right;
+	width:				auto;
+	.border-radius ( @baseBorderRadius );
+
+	.divider {
+		float: none;
+		margin-left:	22px;
+	}
+
+	b.caret {
+		margin-left:	8px;
+		margin-right:	6px;
+	}
+}
+
+// --------------------------- NAVIGATION
+
+.company-name {
+	background: url('@{logoImageUrl}clearCollateral.png') no-repeat;
+	float: left;
+	margin: 23px 13px 11px 17px;
+	.size( 22px, 188px );
+}
+
+.navbar .nav {
+
+	.preview-icon {
+		background-color: 	@grey15;
+		color:				@grey65;
+		// .border-radius( @baseBorderRadius );
+		// background: url('@{functionalIconImageUrl}apple-touch-icon-57-precomposed.png') no-repeat;
+		float: left;
+		margin: 6px;
+		.size( 43px, 52px );
+		text-align: center;
+
+		&:hover,
+		&:active {
+			background-color:	darken( @grey25, 10% );
+			.transition (		@cc-background-color-transiton );
+		}
+
+		&.appr {
+			border-top: 9px solid @red;
+		}
+
+		&.bpo {
+			border-top: 9px solid @blue;
+		}
+
+		&.buildingBlocks {
+			border-top: 9px solid @teal;
+			font-size: 12px;
+			line-height: 1em;
+
+			a {
+				padding-top: 8px;
+			}
+		}
+
+		&.contact {
+			border-top: 9px solid @gold;
+		}
+
+		&.profile {
+			border-top: 9px solid @green;
+		}
+
+		&.admin {
+			border-top: 9px solid @orange;
+		}
+
+		a {		
+			padding: 		12px 6px;
+		}
+
+		a:hover,
+		a:active {
+			color: 			@grey5;
+			text-shadow:	0 1px 0 @grey85;
+			.transition (	@cc-font-color-transiton );
+			.transition ( 	@cc-text-shadow-transition );
+		}
+	}
+
+}
+
+#admin-menu {
+	width: 160px;
+
+	//FROM BOOTSTRAP
+	-webkit-background-clip: 	padding-box;
+	   -moz-background-clip: 	padding;
+			background-clip:	padding-box;
+	background-color: 			@grey25;
+	display: 					none;
+	float: 						left;
+	left: 						0;
+	list-style: 				none;
+	margin: 					2px 0 0;
+	min-width: 					140px;
+	padding: 					5px 10px;
+	position: 					absolute;
+	top: 						100%;
+	z-index: 					1000;
+
+	&:before {
+		// content: '';
+		// display: inline-block;
+		// border-left: 7px solid transparent;
+		// border-right: 7px solid transparent;
+		// border-bottom: 7px solid #ccc;
+		// border-bottom-color: rgba(0, 0, 0, 0.2);
+		// position: absolute;
+		// top: -7px;
+		// left: 9px;
+	}
+
+	&:after {
+		content: 				'';
+		display: 				inline-block;
+		border-left: 			6px solid transparent;
+		border-right: 			6px solid transparent;
+		border-bottom: 			6px solid @grey25;
+		position: 				absolute;
+		top: 					-6px;
+		left: 					10px;
+	}
+}
+
+/* create an arrow that points up */
+.arrow-up {
+
+}
+
+.preview-tile {
+	background-color: @grey15;
+	// background: url('@{functionalIconImageUrl}apple-touch-icon-144-precomposed.png') no-repeat;
+	float: left;
+	margin: 20px;
+	padding: 30px;
+	.square( 100px );
+}
+
+.navbar-form{
+	margin-top: 6px;
+
+	input {
+		.border-radius ( 0px );
+		margin-left: 	12px;
+		width: 			175px;
+	}
+
+	div.label {
+		.border-radius ( 0px );
+		margin-left: 150px;
+		margin-top: 12px;
+	}
+
+	p {
+		margin-left: 12px;
+		margin-top: 12px;
+	}
+
+
+	#login-button,
+	#logout-button {
+		.border-radius ( 0px );
+		margin-top: 	5px;
+		margin-right: 	10px;
+	}
+}
+
+.user-info .label {
+	margin-top: 	10px;
+	text-align: 	center;
+}
+
+.user-info p {
+	font-size: 		@baseFontSize * 0.9;
+	margin-top: 	8px;
+}
+
+
+
+// ----------------------- FOOTER
+
+footer.main-footer {
+	// bottom: 		24px;
+	font-size: 		@fontSizeSmall;
+	margin-top: 	12px;
+	margin-left: 	4%;
+	margin-right: 	4%;
+	position:  		absolute;
+	text-align: 	center;
+	width: 			92%;
+
+	.container {
+		border-top:		1px solid @grey25;
+		padding-top: 	6px;
+	}
+}
+
+
+
+
+// ----------------------- USER ADMIN
+#current-users-table {
+	font-size: 		@fontSizeSmall;
+}
+
+.password-window,
+.view-selector {
+	border: 		1px solid @grey25;
+	.border-radius( @baseBorderRadius );
+	.box-shadow( 0px 2px 6px @grey45);
+	margin-bottom: 	12px;
+	padding: 		12px;
+	text-align:  	center;
+	width: 			470px;
+}
+
+.breaker {
+	border-top: 	1px solid @grey85;
+	margin-top: 	12px;
+	margin-bottom: 	12px;
+	width: 			auto;
+}
+
+#user-info p[id^="view"] {
+	border-bottom: 	1px solid @grey25;
+	height: 		1.4em;
+	padding:	 	2px 6px;
+	margin-bottom: 	22px;
+	width: 			220px;
+}
+
+#user-info.admin p[id^="view"],
+#user-info.admin .control-group.user {
+	display: 		none;
+}
+
+#user-info.user input[id^="input"],
+#user-info.user .control-group.admin {
+	display: 		none;
+}
+
+#user-info.user-edit p[id^="view"],
+#user-info.user-edit .control-group.admin {
+	display: 		none;
+}
+
+// --------------------------- PASSWORD VALIDATION
+#change-password {
+	.popover-content {
+		color: @red;
+		font-size: @fontSizeSmall;
+		}
+
+	.controls {
+		input.error,
+		input[type="text"].error:focus,
+		input[type="password"].error:focus {
+			border: 1px solid @red;
+			.box-shadow ( 0px 0px 6px @red );
+			.transition ( border linear .2s);
+			.transition ( box-shadow linear .2s );
+		}	
+	}
+}
+
+
+
+// --------------------------- IMPORTS
+@import 'main/_drawer.less';				// Project drawer
+
+@import 'libs/_building-blocks.less';		// Clear Capital Building Block
+@import 'libs/_wells-cc.less';				// Clear Capital Wells styles
+@import 'libs/_popup-cc.less';				// Clear Capital Popup styles
+@import 'libs/_modal-cc.less';				// Clear Capital Modal styles
+@import 'libs/_toggle-cc.less';				// Clear Capital Toggle styles
+
+
+//@import 'main/_layout.less';        // General grid
+//@import 'main/_widgets.less';       // Some shared elements
+//@import 'main/_header.less';        // Top header + User bar
+//@import 'main/_breadcrumb.less';    // Breadcrumb + App menu
+//@import 'apps/_tasks.less';         // Tasks 
+
+
+// @import 'libs/_cc-theme.less';        // Theme file for client 
+
